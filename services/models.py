@@ -9,6 +9,8 @@ class Person(AbstractUser):
     REQUIRED_FIELDS = ['username']
     def __str__(self):
         return self.username
+
+    pass
 class Meetingtime(models.Model):
     user = models.ForeignKey(Person, on_delete=models.CASCADE, related_name='meetingtimes',null=True)
     name = models.CharField(max_length=100)
